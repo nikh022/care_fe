@@ -95,6 +95,12 @@ export function NavMain({ links }: { links: NavigationLink[] }) {
                   >
                     <ActiveLink
                       href={link.url}
+                      className={cn(
+                        link.url
+                          .split("/")
+                          .every((part) => fullPathMap[part]) &&
+                          "bg-white text-green-700 shadow-sm",
+                      )}
                       activeClass="bg-white text-green-700 shadow-sm"
                       exactActiveClass="bg-white text-green-700 shadow-sm"
                     >
